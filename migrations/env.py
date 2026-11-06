@@ -3,7 +3,7 @@ from sqlmodel import SQLModel
 
 from taskdesk import models  # noqa: F401  (registers the tables on SQLModel.metadata)
 from taskdesk.config import get_settings
-from taskdesk.db import make_engine
+from taskdesk.db import make_engine, normalize_database_url
 
 target_metadata = SQLModel.metadata
 
@@ -11,7 +11,7 @@ target_metadata = SQLModel.metadata
 def run_migrations_offline() -> None:
     """Emit SQL to stdout without connecting to the database."""
     context.configure(
-        url=get_settings().database_url,
+        url=normalize_database_url(get_settings().database_url),
         target_metadata=target_metadata,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
