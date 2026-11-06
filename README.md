@@ -1,4 +1,6 @@
 # Taskdesk
+**Live demo:** https://taskdesk-78m7.onrender.com/docs
+(Free hosting sleeps when idle, so the first load can take about a minute.)
 
 A small task-tracking REST API built to practise a production-style Python backend setup:
 FastAPI, SQLModel, Alembic migrations, structured logging, tests, and strict linting and type
