@@ -14,7 +14,7 @@ class Settings(BaseSettings):
 
     # AI step suggestions (Google Gemini). Without a key the endpoint answers 503.
     gemini_api_key: str | None = None
-    ai_model: str = "gemini-3.8-flash-lite"
+    ai_model: str = "gemini-3.5-flash-lite"
 
 
 @lru_cache
